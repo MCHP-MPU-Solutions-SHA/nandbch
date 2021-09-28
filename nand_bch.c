@@ -227,8 +227,8 @@ int nandbch(struct nand_chip *nand, const char *file_in, const char *file_out, u
 
 		for (i=0; i<nand->page_size/nand->ecc_sector; i++) // Generate ECC codes for every sector
 			nand_bch_calculate_ecc(nbc_handle, buf_page+i*nand->ecc_sector,
-															nand->ecc_sector, buf_spare + nand->ecc_offset + i*nand->ecc_bytes,
-															flag & FLAG_NO_MASK);
+						nand->ecc_sector, buf_spare + nand->ecc_offset + i*nand->ecc_bytes,
+						flag & FLAG_NO_MASK);
 
 		if (flag & FLAG_PMECC) {
 			for (i=0; i<nand->page_size; i++) // Recovery the bit order for data area
