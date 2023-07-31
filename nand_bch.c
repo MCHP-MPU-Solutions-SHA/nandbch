@@ -166,7 +166,7 @@ int nandbch(struct nand_chip *nand, const char *file_in, const char *file_out, u
 			goto OUT_3;
 		}
 
-		for (i=0; i<=REV_TABLE_SIZE; i++)
+		for (i=0; i<REV_TABLE_SIZE; i++)
 			rev_table[i] = bit_reverse(i);
 	}
 
